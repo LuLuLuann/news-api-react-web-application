@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -77,7 +78,7 @@ function News() {
       setLoading(true);
   
       //Make news api call using axios
-      const resp = await axios.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}&pageSize=10`);
+      const resp = await axios.get(`https://newsapi.org/v2/everything?q=stocks+finance&apiKey=${apiKey}&pageSize=10`);
       setNewsData(resp.data.articles);
   
       //Set loading boolean to false so that we know to show news articles
@@ -91,12 +92,12 @@ function News() {
   
   
     return (
-      <div className="App">
+      <div className="App" style={styles}>
         <header className="App-header">
           {loading ? "Loading..." : <Container>
-  
+            
             {newsData.map((newsData, index) =>
-              <Row className="d-flex justify-content-center">
+              <Row className="">
                 <Col xs={12} className="mt-5 w-500" key={index}>
                   <a target="_blank" href={newsData.url}>
                     <Card >
@@ -107,13 +108,14 @@ function News() {
                         <Card.Text>
                           {newsData.description}
                         </Card.Text>
+                        <hr />
                       </Card.Body>
                     </Card>
                   </a>
                 </Col>
               </Row>
             )}
-  
+
           </Container>
           }
         </header>
@@ -121,4 +123,18 @@ function News() {
     );
   }
   
+
+  const styles = {
+    display: "flex",
+    justifyContent: "space-around", 
+    fontSize: "20px",
+    backgroundColor: "rgb(233, 110, 198)",
+    padding: "10px 100px",
+    textAlign: "center",
+    
+}
+
+
+// border: "5px dotted black"
+
   export default News;

@@ -1,15 +1,19 @@
 function Footer() {
     return (
         <footer style={styles}>
-            <a href=""></a>
-            <a href=""></a>
+            <h3>Money money money... mon-ey!</h3>
+            {/* <a href=""></a>
+            <a href=""></a> */}
         </footer>
     );
 }
 
 const styles = {
     display: "flex",
-    justifyContent: "space-around"
+    justifyContent: "space-around", 
+    backgroundColor: "turquoise"
 }
 
 export default Footer;
+
+

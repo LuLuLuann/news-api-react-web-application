@@ -6,7 +6,9 @@ function HomePage() {
     return (
         <>
             <NavBar />
+            <hr />
             <News />
+            <hr />
             <Footer />
         </>
     );

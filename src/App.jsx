@@ -8,8 +8,9 @@ function App() {
   return (
     <>
       <h1>Lu's News</h1>
-
+<h3><u>Now viewing</u>: Finance + Stocks</h3>
       <HomePage />
+      
     </>
   )
 }
